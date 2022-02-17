@@ -1,6 +1,6 @@
 
 import React, {Fragment, useRef, useState} from "react";
-//import Logo from "../logo.png";
+import Logo from "../Icos/LOGO.png";
 import { useDispatch} from "react-redux";
 import {Link , useLocation} from "react-router-dom";
 //import {ActionBuscar} from "../Redux/Actions";
@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="logodiv"> {" "}
             <Link to="/"> {" "}
                 <img id="logo"
-                    src="{Logo}"
+                    src={Logo}
                     className="logo"
                     alt=""/></Link>
         </div>

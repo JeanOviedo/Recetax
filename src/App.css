@@ -30,33 +30,45 @@ a{
 }
 
 .card {
-  height: 160px;
-  width: 335px;
-  background-color: #3f37c9;
-  border-radius: 2px;
+  height: 280px;
+  width: 270px;
+background-color: #ffffff;
+  border-radius: 4px;
   padding-top: 0em;
-  padding-left: 2.5%;
+  
   display: inline-flex;
-  margin: 2%;
+  margin: 1%;
   text-align: center;
   align-items: center;
   transition: top ease 0.5s;
   cursor: pointer;
   text-decoration: none;
   transition: ease-in 0.3s;
+  overflow: hidden;
+  
 }
 
 .card h1 {
-  font-size: 9px;
-  color: #fafafa;
+  font-size: 15px;
+  color: #4327c0;
   text-align: left;
   margin: 2px;
   text-transform: capitalize;
+  text-align: center;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 20%; 
+ 
+
+  
+  
 }
 
 .card:hover {
   top: -10px;
-  background-color: #3f37c9;
+  background-color: #494691;
   color: #ffffff;
   text-decoration: none;
   -webkit-transform: scale(1.10);
@@ -64,6 +76,9 @@ a{
   -ms-transform: scale(1.10);
   -o-transform: scale(1.10);
   transform: scale(1.10);
+ 
+ 
+  
 
 }
 
@@ -124,7 +139,7 @@ a{
 }
 .container {
   display: flex;
-  margin: 4em;
+  margin: 1em;
 }
 .left {
   margin: 10px;
@@ -152,6 +167,7 @@ color: beige;
   background-color: #4765ee;
   border-radius: 9px;
   text-align: center;
+  
 }
 
 .derecha {
@@ -300,6 +316,7 @@ color: beige;
   top: 0px;
   right: 0px;
   z-index: 100;
+  opacity: 90%;
  
 }
 
@@ -372,9 +389,14 @@ color: beige;
 
 
 .jugador {
-  width: 85%;
-  margin: 2px;
-  
+  width: 140%;
+  align-items: center;
+  text-align: center;
+  top: -20px;
+  z-index: 2;
+  object-fit: cover;
+
+  background-position: center;
  
   
 }

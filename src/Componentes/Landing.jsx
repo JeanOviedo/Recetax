@@ -1,9 +1,12 @@
 import React from "react";
+import Menus from "./Menus"
 import {Fragment} from "react";
 import HomeImage from "../Icos/homeim.png"
+import HomeImage2 from "../Icos/menu.png"
 // import Search from "./Search";
 import {Link} from "react-router-dom";
 export default function Landing() {
+  
     return (
         <Fragment>
 
@@ -28,9 +31,13 @@ export default function Landing() {
             </div>
 
             <div className="container" id="container">
+<Menus></Menus>
+
+             </div>
+            <div className="container" id="container">
 
                 <div id="izquierda" className="izquierda">
-                    <img src="{Ima2}" className="Ima2"></img>
+                    <img src={HomeImage2} className="Ima2"></img>
                 </div>
                 <div id="right" className="derecha">
 
