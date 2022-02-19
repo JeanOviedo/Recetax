@@ -280,6 +280,10 @@ color: beige;
   color: white;
 
 }
+
+.oculta {
+  display: none;
+}
 .buscarboton:disabled {
   background-color: #2d297a;
   cursor:not-allowed;

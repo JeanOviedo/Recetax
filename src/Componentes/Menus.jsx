@@ -1,7 +1,7 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment, useEffect ,  useState , useRef } from "react";
 import { // ActionModal,
     ActionTodosMenu,
-    ElAddMenu,ElAddToken
+    ElAddMenu,ElAddToken,ElAddTodoEdit 
     // ActionLoading,
 } from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
@@ -15,6 +15,8 @@ export default function Menus() {
     const loading = useSelector((state) => state.loading);
     const modal = useSelector((state) => state.modal);
     const dispatch = useDispatch();
+    const boton = useRef(null);
+    const [show, setShow] = useState(true);
 
     useEffect(() => {
         if (! todos.length) {
@@ -23,7 +25,7 @@ export default function Menus() {
     }, [dispatch]);
 
 
-    function handleAddMenu(evento, datas) {
+    function handleAddMenu(evento, datas, id) {
         evento.preventDefault();
         let dataa = localStorage.getItem("myData");
         if (!dataa) {
@@ -33,7 +35,17 @@ export default function Menus() {
         
            else  {
                if (login==false) {
-                dispatch(ElAddMenu(datas));     
+                dispatch(ElAddMenu(datas));    
+                //document.getElementById(id).style  = 'display: none ';
+                
+                const index = todos.findIndex(prod => prod.id === id); //use id instead of index
+                if (index > -1) { //make sure you found it     
+                    console.log(prevState => prevState.splice(index, 1))             
+                 dispatch(ElAddTodoEdit(todos.filter((i)=>(i.id !== id))) ); 
+                  
+               
+            }
+
                }
            
            } 
@@ -75,7 +87,7 @@ export default function Menus() {
                     <h1> {
                         todos.title
                     }</h1>
-                    <button onClick={
+                    <button ref={boton} onClick={
                             (event) => handleAddMenu(event, {
                                 id: todos.id,
                                 title: todos.title,
@@ -83,9 +95,11 @@ export default function Menus() {
                                 summary: todos.summary,
                                 vegano: todos.vegetarian,
                                 healthScore: todos.healthScore
-                            })
+                            }, todos.id)
                         }
-                        className="buscarboton">Agregar</button>
+                        className="buscarboton"   id={
+                            Math.random(5)
+                        }  id={todos.id}  >Agregar</button>
                     <p>HealthScore : {
                         todos.healthScore
                     }</p>
