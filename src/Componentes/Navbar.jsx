@@ -28,11 +28,11 @@ export default function Navbar() {
                 <li>
                     <Link to="/">Inicio</Link>
                 </li>
+               
+
                 <li>
-                    <Link to="/">Platos</Link>
+                    <Link to="/mimenu">Mi menú</Link>
                 </li>
-
-
                 <li>
                     <Link to="/contacto">Contacto</Link>
                 </li>

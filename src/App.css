@@ -30,11 +30,11 @@ a{
 }
 
 .card {
-  height: 280px;
+  height: 335px;
   width: 270px;
 background-color: #ffffff;
   border-radius: 4px;
-  padding-top: 0em;
+  padding-top: 1em;
   
   display: inline-flex;
   margin: 1%;
@@ -49,26 +49,34 @@ background-color: #ffffff;
 }
 
 .card h1 {
-  font-size: 15px;
+  font-size: 12px;
   color: #4327c0;
   text-align: left;
   margin: 2px;
   text-transform: capitalize;
   text-align: center;
   z-index: 999;
-  margin: 0 auto;
   left: 0;
   right: 0;
-  top: 20%; 
- 
-
+  
   
   
 }
+.card p {
 
+  font-size: 8px;
+}
+
+.card:hover h1{
+ 
+  color: #ffffff;
+ 
+ 
+
+}
 .card:hover {
   top: -10px;
-  background-color: #494691;
+  background-color: #6077e0;
   color: #ffffff;
   text-decoration: none;
   -webkit-transform: scale(1.10);
@@ -77,8 +85,6 @@ background-color: #ffffff;
   -o-transform: scale(1.10);
   transform: scale(1.10);
  
- 
-  
 
 }
 
@@ -137,10 +143,19 @@ background-color: #ffffff;
  .jeanoviedo {
   width: 37%;
 }
+.container2 {
+ background-color: #3f37c9; 
+ text-align: center;
+  width: 100%;
+ 
+}
+
+
 .container {
   display: flex;
   margin: 1em;
 }
+
 .left {
   margin: 10px;
   width: 50%;
@@ -257,7 +272,7 @@ color: beige;
 
 
 .buscarboton:hover {
-  background-color: #7235ac;
+  background-color: #090b74;
 }
 
 .load {
@@ -266,7 +281,7 @@ color: beige;
 
 }
 .buscarboton:disabled {
-  background-color: #3f37c9;
+  background-color: #2d297a;
   cursor:not-allowed;
 }
 
@@ -389,7 +404,7 @@ color: beige;
 
 
 .jugador {
-  width: 140%;
+  width: 136%;
   align-items: center;
   text-align: center;
   top: -20px;

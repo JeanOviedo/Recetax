@@ -30,10 +30,10 @@ export default function Landing() {
 
             </div>
 
-            <div className="container" id="container">
-<Menus></Menus>
+           
 
-             </div>
+
+           
             <div className="container" id="container">
 
                 <div id="izquierda" className="izquierda">
@@ -51,7 +51,7 @@ export default function Landing() {
 
                 </div>
             </div>
-
+            <Menus></Menus>
         </Fragment>
     );
 }

@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./Componentes/Navbar"
 import Contacto from "./Componentes/Contacto";
 import Landing from "./Componentes/Landing";
+import MiMenus from "./Componentes/MiMenu";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <Fragment>
       <Navbar></Navbar><br></br><br></br><br></br><br></br>
+      
      
      
 
@@ -21,8 +23,13 @@ function App() {
           <Landing />
         </Route>
 
-     
         
+        
+         
+        <Route exact path="/mimenu">
+        <MiMenus></MiMenus>
+        </Route>
+      
         <Route exact path="/contacto">
           <Contacto />
         </Route>

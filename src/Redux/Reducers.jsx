@@ -1,17 +1,28 @@
-import {LOADING, TODOS} from "./Actions";
+import {
+    LOADING,
+    TODOS,
+    ADD_MENU,
+    LOGIN,
+    MODAL
+} from "./Actions";
 const initialState = {
     todos: [],
     loading: true,
-    modal : false,
+    modal: {
+        visible: false,
+        msg: ""
+    },
+    mimenu: [],
+    login: ""
 };
 
 export default function rooReducer(state = initialState, action) {
     switch (action.type) {
 
-      
+
         case TODOS:
             return {
-                ...state,
+                ... state,
                 todos: action.payload
 
 
@@ -19,11 +30,43 @@ export default function rooReducer(state = initialState, action) {
 
         case LOADING:
             return {
-              ...state,
-             loadinf: action.payload
-
-
+                ... state,
+                loading: action.payload
             };
+
+        case MODAL:
+            return {
+                ... state,
+                modal: {
+                    visible: action.payloa,
+                    msg: ""
+                }
+            };
+
+
+        case LOGIN:
+            return {
+                ... state,
+                login: action.payload
+            };
+
+        case ADD_MENU:
+
+            return {
+                ... state,
+
+                mimenu: [
+                    ... state.mimenu,
+                    action.payload
+                ],
+
+                modal: {
+                    visible: true,
+                    msg: "Guardado"
+                }
+
+            }
+
 
         default:
             return state;
