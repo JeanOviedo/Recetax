@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Recetas : Menú
 
 TObjetivo
 Desarrollar una aplicación para crear una carta de opciones de menús para un hotel que consumirá una
