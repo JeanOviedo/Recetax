@@ -7,10 +7,11 @@ export const MODAL = "MODAL";
 export const QUITA_MENU = "QUITA_MENU";
 export const ERROR = "ERROR";
 
-// mialet api = "2a7143debaa542baa46e7b118d95f084";
+// mia
+let api = "2a7143debaa542baa46e7b118d95f084";
 // let  api = "8b8a10a2cede413daffe571c0a5be321";
 // et api = "4fffe504459346578fa3ef8d6daa24ea"
- let api = "a1de5c39128c400a880f7e8337e23bc1"
+// let api = "a1de5c39128c400a880f7e8337e23bc1"
 //let api = "d416b5a893204a06bf73bb8a46d70e2e"
 // let api = "d391dd6b7d7c47358081f54cbadbfec0"
 // let api = "f6b4e0c5cc98427283e493660a3e3d4c";
