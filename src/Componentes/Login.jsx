@@ -2,12 +2,15 @@ import React, { Fragment, useState } from "react";
 
 import { ElAddToken } from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
+import Img from "../Icos/sec.png"
 
 export default function Login() {
     const dispatch = useDispatch();
   let modaldata = useSelector((state) => state.modaldata);
+  let error = useSelector((state) => state.error);
   const [email2, setEmail] = useState("");
   const [pass2, setPass] = useState("");
+
 
 
   function handleClick(evento) {
@@ -30,9 +33,9 @@ export default function Login() {
       <div className="modal">
 
         <form onSubmit={handleClick}>
-            
+            <img className="Ima2"  src={Img}></img><br></br><p>Favor Inicie sesión para agregar platos al menú</p>
           <div className="input-container">
-            <label>Username</label>
+            <label>Username </label>
             <input
               type="email"
               onChange={(event) => handleCambioEmail(event)}
@@ -44,7 +47,7 @@ export default function Login() {
           </div>
 
           <div className="input-container">
-            <label>Password</label>
+            <label>Password </label>
             <input
               type="password"
               name="pass"
@@ -59,6 +62,7 @@ export default function Login() {
             <input  className="buscarboton"type="submit" />
           </div>
         </form>
+        <p>{error}</p>
       </div>
     </Fragment>
   );

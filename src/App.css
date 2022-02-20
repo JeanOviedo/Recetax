@@ -136,7 +136,12 @@ background-color: #ffffff;
   width: 100%;
 }
 .Ima2 {
-  width: 46%;
+  width: 35%;
+  margin: 1em;
+}
+
+.Ima3 {
+  width: 28%;
   margin: 1em;
 }
 
@@ -196,11 +201,26 @@ color: beige;
 
 }
 
+.derecha2 {
+  margin: 2px;
+  width: 95%;
+ background-color: #4765ee;
+  border-radius: 9px;
+  padding: 1em;
+font-size: 30px;
+color: beige;
+
+}
 .Search2 {
   display: none;
 }
 
 .derecha  h1{
+  font-size: 15px;
+}
+
+
+.derecha2  h1{
   font-size: 15px;
 }
 

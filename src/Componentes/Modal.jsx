@@ -2,29 +2,30 @@ import React, { Fragment, useState } from "react";
 
 import { Modal} from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
+import Img from "../Icos/info.png";
 
 export default function Login() {
     const dispatch = useDispatch();
-  let modalmsg= useSelector((state) => state.modal.msg);
-  const [email2, setEmail] = useState("");
-  const [pass2, setPass] = useState("");
+  let modal= useSelector((state) => state.modal);
+  
 
 
   function handleClick(evento) {
     evento.preventDefault();
-    dispatch(Modal(false));
+    dispatch(Modal(false, "Guardado el el menú con exito"));
   }
 
  
   return (
     <Fragment>
-      <div className="modal">
+      <div className="modal"><br></br><br></br>
+        <img src={Img} className="Ima3"></img>
 
-      <h1>{modalmsg}</h1>
+      <h1>{modal.msg}</h1>
           
 
 
-<button Onclick={handleClick} className="buscarboton"> Cerrar</button>
+<button onClick={handleClick} className="buscarboton"> Cerrar</button>
        
             
           </div>

@@ -16,10 +16,10 @@ export default function Menus() {
   const todos = useSelector((state) => state.todos);
   const login = useSelector((state) => state.login);
   const loading = useSelector((state) => state.loading);
-  const modal = useSelector((state) => state.modal);
+  const modal = useSelector((state) => state.modal.visible);
   const dispatch = useDispatch();
   const boton = useRef(null);
-  const [show, setShow] = useState(true);
+  
 
   useEffect(() => {
     if (!todos.length) {
@@ -37,6 +37,7 @@ export default function Menus() {
     if (!dataa) {
       dispatch(ElAddToken(datas));
       console.log(datas, "clik");
+     
     } else {
       if (login == false) {
         dispatch(ElAddMenu(datas));
@@ -55,7 +56,7 @@ export default function Menus() {
   return (
     <Fragment>
       <br /> {login == true ? <Login></Login> : ""}
-      {modal == true ? <Modal></Modal> : ""}
+      {modal === true ? <Modal></Modal> : ""}
 
 
       <center><button
@@ -67,15 +68,8 @@ export default function Menus() {
       <br />
 
       {todos.length <= 4 ? handleAddMenuMas() : ""}
-      <div class="container2" key={Math.random(5)}>
-        {" "}
-        {/* {loading === true ? (
-          <center>
-            <Load></Load>{" "}
-          </center>
-        ) : (
-          ""
-        )} */}
+      <div className="container2" key={Math.random(5)}>
+      
         {console.log(todos, "TOFDOS FRONT")}
         {todos
           ? todos.map((todos) => (
@@ -110,7 +104,7 @@ export default function Menus() {
                   </button>
                   <p>HealthScore : {todos.healthScore}</p>
                   <br />
-                  <img src={todos.img} className="jugador" />
+                  <img src={todos.img== undefined ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQML09PCY3O9e_sD3yCJSUyK_Ai157oP3Lvlg&usqp=CAU" : todos.img} className="jugador" />
                 </div>
 
                 <br />
