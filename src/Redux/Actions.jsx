@@ -128,7 +128,7 @@ export const ElAddToken = (email, pass) => {
                 localStorage.setItem("myData", response.data.token);
                 console.log(localStorage.getItem("myData"), "LOCAL");
                 dataa = localStorage.getItem("myData");
-                dispatch({type: "MODAL", payload: true, msg: "Bienvenido ya puedes agregar tus platos al menú"});
+                dispatch({type: "MODAL", payload: true, msg: "Bienvenido...ya puedes agregar tus platos al menú"});
             } else if (response) {
                 dispatch({type: "LOGIN", payload: true});
                 dispatch({type: "MODAL", payload: true, msg: "Ocurrio un error de credenciales"});
@@ -141,7 +141,7 @@ export const ElAddToken = (email, pass) => {
 
 
             dispatch({type: "LOGIN", payload: true});
-            dispatch({type: "MODAL", payload: true, msg: "Error de credenciales, favor inicie sesión"});
+            dispatch({type: "MODAL", payload: true, msg: "!Error! de credenciales, favor inicie sesión"});
 
 
         }
