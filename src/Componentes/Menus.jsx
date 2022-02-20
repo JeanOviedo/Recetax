@@ -5,6 +5,7 @@ import {
   ElAddMenu,
   ElAddToken,
   ElAddTodoEdit,
+  ActionBuscar
   // ActionLoading,
 } from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -29,6 +30,17 @@ export default function Menus() {
 
   function handleAddMenuMas() {
     dispatch(ActionTodosMenu());
+  }
+
+  function handleBuscar(evento) {
+    evento.preventDefault();
+    
+
+    if (evento.target.value) {
+      dispatch(ActionBuscar(evento.target.value));
+      console.log(evento.target.value, "clik buscar");
+     
+    }
   }
 
   function handleAddMenu(evento, datas, id) {
@@ -64,7 +76,7 @@ export default function Menus() {
         className="buscarboton"
       >
        +Platos
-      </button></center>
+      </button> <br></br> <br></br><input   placeholder="Escriba el nombre del plato" className="Search" onChange={(event) =>handleBuscar(event)}></input>  </center>
       <br />
 
       {todos.length <= 4 ? handleAddMenuMas() : ""}

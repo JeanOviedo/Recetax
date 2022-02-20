@@ -30,7 +30,7 @@ a{
 }
 
 .card {
-  height: 335px;
+  height: 348px;
   width: 270px;
 background-color: #ffffff;
   border-radius: 4px;
@@ -110,10 +110,10 @@ background-color: #ffffff;
  margin-top: -7px;
   border-radius: 6.5px;
   text-transform: capitalize;
-  text-align: left;
+  text-align: center !important;
   height: 32px;
   width: 439px;
-  left: 23px;
+  
  
   
 }
@@ -545,10 +545,7 @@ color: beige;
 }
 
 
-.Search {
-  
-  display: none;
-}
+
 
 .Search2 {
   text-align: left;
@@ -576,7 +573,7 @@ color: beige;
 }
 
 .derecha {
-  width: 81%;
+  width: 100%;
 }
 .derecha h2 {
   font-size: 18px;
@@ -649,7 +646,7 @@ color: beige;
 .card {
   height: 100%;
   width: 90%;
-  background-color: #593475;
+  background-color: #e7e6eb;
   border-radius: 2px;
   padding-top: 0em;
   padding-left: 2.5%;
