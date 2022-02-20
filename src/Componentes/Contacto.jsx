@@ -1,7 +1,7 @@
 import React from "react";
 // import { connect } from "react-redux";
 // import { Link } from 'react-router-dom';
-//import Imagenc from "../../src/img-opacity50.png";
+import Imagenc from "../Icos/img-opacity50.png";
 
 export default function Contacto() {
   return (
@@ -25,7 +25,7 @@ export default function Contacto() {
         <div>
           {" "}
           <center>
-            <img src="{Imagenc}" className="jeanoviedo" alt="..." />
+            <img src={Imagenc} className="jeanoviedo" alt="..." />
           </center>
         </div>
       </div>

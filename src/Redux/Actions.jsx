@@ -12,7 +12,7 @@ let api = "2a7143debaa542baa46e7b118d95f084";
 // let  api = "8b8a10a2cede413daffe571c0a5be321";
 // et api = "4fffe504459346578fa3ef8d6daa24ea"
 // let api = "a1de5c39128c400a880f7e8337e23bc1"
-//let api = "d416b5a893204a06bf73bb8a46d70e2e"
+// let api = "d416b5a893204a06bf73bb8a46d70e2e"
 // let api = "d391dd6b7d7c47358081f54cbadbfec0"
 // let api = "f6b4e0c5cc98427283e493660a3e3d4c";
 export function ActionTodosMenu() {
@@ -46,23 +46,26 @@ export function ActionTodosMenu() {
 export function ActionBuscar(buscar) {
     return async function (dispatch) {
         try {
-            let response = await axios({url: `https://api.spoonacular.com/recipes/complexSearch?query=${
+            let response = await axios({
+                    url: `https://api.spoonacular.com/recipes/complexSearch?query=${
                     buscar
-                }&number=20&instructionsRequired=true&apiKey=${api}`, method: "get"});
-               
-                console.log(response.data.results, "Busqueda ok")
-                response = [response.data.results]
-                response  = response.map((arr) => {
-                    return {
-                        id: arr.id,
-                        title: arr.title,
-                        img: arr.image,
-                        summary: "",
-                        vegano: "",
-                        healthScore: ""
-                    };
-                });
-               
+                }&number=20&instructionsRequired=true&apiKey=${api}`,
+                method: "get"
+            });
+
+            console.log(response.data.results, "Busqueda ok")
+            response = [response.data.results]
+            response = response.map((arr) => {
+                return {
+                    id: arr.id,
+                    title: arr.title,
+                    img: arr.image,
+                    summary: "",
+                    vegano: "",
+                    healthScore: ""
+                };
+            });
+
             dispatch({type: "TODOS", payload: response});
             // dispatch({type: "LOADING", payload: false});
         } catch (error) {
@@ -106,6 +109,7 @@ export const Modal = (modal, msg) => {
 };
 
 export const ElAddToken = (email, pass) => {
+
     let dataa;
     return async function (dispatch) {
         try {
@@ -124,14 +128,22 @@ export const ElAddToken = (email, pass) => {
                 localStorage.setItem("myData", response.data.token);
                 console.log(localStorage.getItem("myData"), "LOCAL");
                 dataa = localStorage.getItem("myData");
-            } else if (! response.data.token) {
+                dispatch({type: "MODAL", payload: true, msg: "Bienvenido ya puedes agregar tus platos al menú"});
+            } else if (response) {
                 dispatch({type: "LOGIN", payload: true});
                 dispatch({type: "MODAL", payload: true, msg: "Ocurrio un error de credenciales"});
+            } else {
+                dispatch({type: "LOGIN", payload: true});
+                dispatch({type: "MODAL", payload: true, msg: "Ocurrio un error de credenciales, favor inicie sesión"});
             }
         } catch (error) {
             console.log("ERROR TOKEN", error);
 
+
             dispatch({type: "LOGIN", payload: true});
+            dispatch({type: "MODAL", payload: true, msg: "Error de credenciales, favor inicie sesión"});
+
+
         }
     };
 };

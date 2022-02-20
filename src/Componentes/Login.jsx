@@ -7,15 +7,24 @@ import Img from "../Icos/sec.png"
 export default function Login() {
     const dispatch = useDispatch();
   let modaldata = useSelector((state) => state.modaldata);
-  let error = useSelector((state) => state.error);
+  //let error = useSelector((state) => state.error);
   const [email2, setEmail] = useState("");
   const [pass2, setPass] = useState("");
-
+  const [error, setError] = useState("");
 
 
   function handleClick(evento) {
     evento.preventDefault();
-    dispatch(ElAddToken(email2, pass2));
+    if (email2 && pass2) {
+      setError("Enviando data")
+      dispatch(ElAddToken(email2, pass2));
+      setError("")
+      
+    }
+    else{
+      setError("Verifique si campos estan vacios")
+    }
+    
   }
 
   function handleCambioEmail(event) {
@@ -36,6 +45,7 @@ export default function Login() {
             <img className="Ima2"  src={Img}></img><br></br><p>Favor Inicie sesión para agregar platos al menú</p>
           <div className="input-container">
             <label>Username </label>
+            
             <input
               type="email"
               onChange={(event) => handleCambioEmail(event)}
@@ -62,7 +72,7 @@ export default function Login() {
             <input  className="buscarboton"type="submit" />
           </div>
         </form>
-        <p>{error}</p>
+      
       </div>
     </Fragment>
   );

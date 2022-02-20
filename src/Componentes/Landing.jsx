@@ -14,8 +14,8 @@ export default function Landing() {
                 <div id="left" className="left">
                     <h2>Encuentra tu plato fuerte
                     </h2>
-                    <Link to="/">
-                        <button className="boton">Ver Menús</button>
+                    <Link to="/mimenu">
+                        <button className="boton">Ver Mi Menu</button>
                     </Link>
                     <Link to="/contacto">
                         <button className="boton">Contacto</button>
