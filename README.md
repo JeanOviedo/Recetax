@@ -8,6 +8,6 @@ API externa y mostrará diferentes atributos a nivel individual de cada plato y 
 
 
 
-  <img height="700" src="https://raw.githubusercontent.com/JeanOviedo/Recetax/9974328c04d5284e6f4b2495d8c00701c33a3ce1/src/Icos/caotura1.png" />
- <img height="600" src="https://raw.githubusercontent.com/JeanOviedo/Recetax/9974328c04d5284e6f4b2495d8c00701c33a3ce1/src/Icos/captura2.jpg" />
+  <img height="600" src="https://raw.githubusercontent.com/JeanOviedo/Recetax/9974328c04d5284e6f4b2495d8c00701c33a3ce1/src/Icos/caotura1.png" />
+ <img height="650" src="https://raw.githubusercontent.com/JeanOviedo/Recetax/9974328c04d5284e6f4b2495d8c00701c33a3ce1/src/Icos/captura2.jpg" />
 
