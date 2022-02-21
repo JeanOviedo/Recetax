@@ -19,7 +19,7 @@ export function ActionTodosMenu() {
     return async function (dispatch) {
         try {
             let response = await axios({
-                url: "https://api.spoonacular.com/recipes/random?number=8&apiKey=" + api,
+                url: "http://api.spoonacular.com/recipes/random?number=8&apiKey=" + api,
                 method: "get"
             });
             let food = response.data.recipes.map((arr) => {
