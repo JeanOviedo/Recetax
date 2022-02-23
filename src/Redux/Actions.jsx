@@ -8,8 +8,8 @@ export const QUITA_MENU = "QUITA_MENU";
 export const ERROR = "ERROR";
 
 // mia
-let api = "2a7143debaa542baa46e7b118d95f084";
-// let  api = "8b8a10a2cede413daffe571c0a5be321";
+//let api = "2a7143debaa542baa46e7b118d95f084";
+ let  api = "8b8a10a2cede413daffe571c0a5be321";
 // et api = "4fffe504459346578fa3ef8d6daa24ea"
 // let api = "a1de5c39128c400a880f7e8337e23bc1"
 // let api = "d416b5a893204a06bf73bb8a46d70e2e"
@@ -19,7 +19,7 @@ export function ActionTodosMenu() {
     return async function (dispatch) {
         try {
             let response = await axios({
-                url: "http://api.spoonacular.com/recipes/random?number=8&apiKey=" + api,
+                url: "https://api.spoonacular.com/recipes/random?number=8&apiKey=" + api,
                 method: "get"
             });
             let food = response.data.recipes.map((arr) => {
