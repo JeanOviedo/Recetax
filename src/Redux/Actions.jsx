@@ -6,12 +6,12 @@ export const LOGIN = "LOGIN";
 export const MODAL = "MODAL";
 export const QUITA_MENU = "QUITA_MENU";
 export const ERROR = "ERROR";
-
+export const ONE = "ONE";
 // mia
 //let api = "2a7143debaa542baa46e7b118d95f084";
- let  api = "8b8a10a2cede413daffe571c0a5be321";
+ //let  api = "8b8a10a2cede413daffe571c0a5be321";
 // et api = "4fffe504459346578fa3ef8d6daa24ea"
-// let api = "a1de5c39128c400a880f7e8337e23bc1"
+ let api = "a1de5c39128c400a880f7e8337e23bc1"
 // let api = "d416b5a893204a06bf73bb8a46d70e2e"
 // let api = "d391dd6b7d7c47358081f54cbadbfec0"
 // let api = "f6b4e0c5cc98427283e493660a3e3d4c";
@@ -42,6 +42,30 @@ export function ActionTodosMenu() {
         }
     };
 }
+
+
+
+export function ActionDetails(id) {
+    return async function (dispatch) {
+        try {
+            let response = await axios({
+                url: "https://api.spoonacular.com/recipes/"+id+"/ingredientWidget.json?apiKey=" + api,
+                method: "get"
+            });
+            let datosok = [response.data];
+            console.log(datosok[0].ingredients, "data kkkkkkkkkkkk");
+            let data = datosok ;
+            console.log(data, "data");
+            dispatch({type: "ONE", payload: data[0].ingredients});
+            // dispatch({type: "LOADING", payload: false});
+        } catch (error) {
+            console.log("ERROR POKE API ", error);
+        }
+    };
+}
+
+
+
 
 export function ActionBuscar(buscar) {
     return async function (dispatch) {
@@ -128,7 +152,7 @@ export const ElAddToken = (email, pass) => {
                 localStorage.setItem("myData", response.data.token);
                 console.log(localStorage.getItem("myData"), "LOCAL");
                 dataa = localStorage.getItem("myData");
-                dispatch({type: "MODAL", payload: true, msg: "Bienvenido...ya puedes agregar tus platos al menú"});
+                dispatch({type: "MODAL", payload: true, msg: "++++++++Bienvenido++++++++++   ya puedes agregar tus platos al menú"});
             } else if (response) {
                 dispatch({type: "LOGIN", payload: true});
                 dispatch({type: "MODAL", payload: true, msg: "Ocurrio un error de credenciales"});

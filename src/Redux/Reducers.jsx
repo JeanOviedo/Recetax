@@ -6,9 +6,11 @@ import {
     MODAL,
     QUITA_MENU,
     ERROR,
+    ONE,
 } from "./Actions";
 const initialState = {
     todos: [],
+    one: [],
     error: "",
     loading: true,
     modal: {
@@ -37,6 +39,13 @@ export default function rooReducer(state = initialState, action) {
                 ... state,
                 loading: action.payload
             };
+
+            case ONE:
+            return {
+                ... state,
+                one: action.payload
+            };
+
 
         case MODAL:
             return {

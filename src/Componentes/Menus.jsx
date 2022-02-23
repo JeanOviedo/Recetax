@@ -13,6 +13,7 @@ import Modal from "./Modal";
 
 // import Load from "./Load";
 import Login from "./Login";
+import { Link } from "react-router-dom";
 export default function Menus() {
   const todos = useSelector((state) => state.todos);
   const login = useSelector((state) => state.login);
@@ -90,6 +91,7 @@ export default function Menus() {
                 key={Math.random(5)}
                 // onClick={(event) => handleClick(event, menus.recipes)}
               >
+           
                 <div key={Math.random(5)}>
                   <h1> {todos.title}</h1>
                   <button
@@ -114,6 +116,7 @@ export default function Menus() {
                   >
                     Agregar
                   </button>
+                  <Link to={`/detalles/${todos.id}`}><button  className="buscarboton">Ingredientes</button></Link>
                   <p>HealthScore : {todos.healthScore}</p>
                   <br />
                   <img src={todos.img== undefined ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQML09PCY3O9e_sD3yCJSUyK_Ai157oP3Lvlg&usqp=CAU" : todos.img} className="jugador" />
@@ -121,7 +124,7 @@ export default function Menus() {
 
                 <br />
                 <br />
-              </div>
+               </div>
             ))
           : !todos
           ? ""

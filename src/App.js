@@ -6,6 +6,7 @@ import Navbar from "./Componentes/Navbar"
 import Contacto from "./Componentes/Contacto";
 import Landing from "./Componentes/Landing";
 import MiMenus from "./Componentes/MiMenu";
+import Details from "./Componentes/Details";
 
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
           <Contacto />
         </Route>
       
+        <Route exact path="/detalles/:id">
+          <Details/>
+        </Route>
+
         
       </Switch>
     </Fragment>

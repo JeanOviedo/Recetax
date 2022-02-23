@@ -7,6 +7,7 @@ import {
 } from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 // import Modal from "./Modal";
 // import Load from "./Load";
 export default function MiMenus() {
@@ -61,6 +62,7 @@ export default function MiMenus() {
                 >
                   Quitar
                 </button>
+                <Link to={`/detalles/${todos.id}`}><button  className="buscarboton">Ingredientes</button></Link>
                 <p>HealthScore : {todos.healthScore}</p>
                 <br />
                 <img src={todos.img== undefined ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQML09PCY3O9e_sD3yCJSUyK_Ai157oP3Lvlg&usqp=CAU" : todos.img} className="jugador" />

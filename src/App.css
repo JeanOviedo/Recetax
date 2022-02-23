@@ -29,6 +29,30 @@ a{
   color: #61dafb;
 }
 
+
+
+
+.carding {
+  height: 148px;
+  width: 170px;
+background-color: #ffffff;
+  border-radius: 4px;
+  padding-top: 1em;
+  display: inline-flex;
+  margin: 1%;
+  text-align: center;
+  align-items: center;
+  transition: top ease 0.5s;
+  text-decoration: none;
+  transition: ease-in 0.3s;
+  overflow: hidden;
+  text-transform: capitalize;
+  clear:left !important; 
+  font-size: 12px;
+  
+}
+
+
 .card {
   height: 348px;
   width: 270px;
@@ -47,6 +71,26 @@ background-color: #ffffff;
   overflow: hidden;
   
 }
+.carding h1 {
+  font-size: 12px;
+  color: #4327c0;
+  text-align: left;
+  margin: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  
+  
+  
+}
+.carding p {
+
+  font-size: 8px;
+}
+
+
 
 .card h1 {
   font-size: 12px;
@@ -75,6 +119,21 @@ background-color: #ffffff;
 
 }
 .card:hover {
+  top: -10px;
+  background-color: #6077e0;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transform: scale(1.10);
+  -moz-transform: scale(1.10);
+  -ms-transform: scale(1.10);
+  -o-transform: scale(1.10);
+  transform: scale(1.10);
+ 
+
+}
+
+
+.carding:hover {
   top: -10px;
   background-color: #6077e0;
   color: #ffffff;
@@ -240,8 +299,8 @@ color: beige;
 
 .buscarboton {
   margin-top: -5px;
-  width: 101px;
-  height: 37px;
+  width: 121px;
+  height: 47px;
   text-align: center;
   border-style: none;
   cursor: pointer;
