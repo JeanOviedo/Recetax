@@ -543,6 +543,7 @@ color: beige;
   .navbar li {
     
     text-align: center;
+    
   }
 
   .logo {
@@ -565,9 +566,9 @@ color: beige;
 
 .menu {
   text-align: center !important;
-    font-size: 13px;
-    margin: 10px;
-    width: 50%;
+    font-size: 11px;
+    margin: 9px;
+    width: 60%;
   }
 .logoder{
  height: 100%;
